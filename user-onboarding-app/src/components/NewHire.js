@@ -10,16 +10,7 @@ export default function NewHire({ details }) {
       <h2>{details.name}</h2>
       <p>Email: {details.email}</p>
       <p>Password: {details.password}</p>
-
-      {
-        !!details.terms && !!details.terms.length &&
-        <div>
-          Terms of Service:
-          <ul>
-            {details.terms.map((accept, idx) => <li key={idx}>{accept}</li>)}
-          </ul>
-        </div>
-      }
+      <p>Terms of Service: {details.terms}</p>
     </div>
   )
 }

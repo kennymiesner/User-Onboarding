@@ -71,7 +71,7 @@ export default function App() {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       password: formValues.password.trim(),
-      terms: ['terms'].filter(term => formValues[term]),
+      terms: ['Accepted'],
     }
     // 🔥 STEP 8- POST NEW FRIEND USING HELPER
     postNewHire(newHire)
