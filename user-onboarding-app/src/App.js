@@ -24,12 +24,23 @@ const initialFormErrors = {
   terms: '',
 }
 
-function App() {
+const postNewHire = newHire => {
+  axios.post('https://reqres.in/api/users', newHire)
+    .then(res => {
+      setHires([res.data, ...employees])
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    .finally(() => {
+      setFormValues(initialFormValues)
+    })
+}
+
+export default function App() {
   return (
     <div className="App">
       <Form />
     </div>
   );
 }
-
-export default App;
