@@ -2,7 +2,7 @@
 import * as yup from 'yup'
 
 const formSchema = yup.object().shape({
-    username: yup
+    name: yup
         .string()
         .trim()
         .required('Username is required')
@@ -11,15 +11,12 @@ const formSchema = yup.object().shape({
         .string()
         .email('Must be a valid email address')
         .required('Email is required'),
-    role: yup
+    password: yup
         .string()
-        .oneOf(['instructor', 'student', 'alumni', 'tl'], 'Role is required'),
-    civil: yup
-        .string()
-        .oneOf(['single', 'married]'], 'Civil status is required'),
-    coding: yup.boolean(),
-    reading: yup.boolean(),
-    hiking: yup.boolean(),
+        .trim()
+        .required('Password is required')
+        .min(8, 'Password must be at least 8 characters long'),
+    terms: yup.boolean(),
 })
 
 export default formSchema
